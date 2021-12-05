@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE laptops>
+<laptops>
+    <laptop>
+        <id>1</id>
+        <brand>Dell</brand>
+        <model>XPS 15</model>
+        <cpu>Intel Core i7 11th Gen</cpu>
+        <ram>8GB</ram>
+        <storage type="SSD">256 GB</storage>
+        <weight>2.64 Pounds</weight>
+    </laptop>
+    <laptop>
+        <id>2</id>
+        <brand>Microsoft</brand>
+        <model>Surface Laptop Studio</model>
+        <cpu>Intel Core i5 11th Gen</cpu>
+        <ram>16GB</ram>
+        <storage type="SSD">512 GB</storage>
+        <weight>3.8 Pounds</weight>
+    </laptop>
+    <laptop>
+        <id>3</id>
+        <brand>Asus</brand>
+        <model>ROG Zephyrus G14</model>
+        <cpu>AMD Ryzen 9</cpu>
+        <ram>16GB</ram>
+        <storage type="SSD">1 TB</storage>
+        <weight>2.79 Pounds</weight>
+    </laptop>
+    <laptop>
+        <id>4</id>
+        <brand>Alienware</brand>
+        <model>m15 R4</model>
+        <cpu>Intel Core i7 11th Gen</cpu>
+        <ram>32GB</ram>
+        <storage type="SSD">512 GB</storage>
+        <weight>3.5 Pounds</weight>
+    </laptop>
+    <laptop>
+        <id>5</id>
+        <brand>Lenevo</brand>
+        <model>Yoga 9i</model>
+        <cpu>Intel Core i3 11th Gen</cpu>
+        <ram>32GB</ram>
+        <storage type="SSD">256 GB</storage>
+        <weight>3 Pounds</weight>
+    </laptop>
+</laptops>

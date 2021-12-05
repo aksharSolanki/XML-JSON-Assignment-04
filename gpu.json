@@ -1,0 +1,44 @@
+{
+    "graphicCards" : [
+        {
+           "id" : 1,
+           "brand" : "Nvidia",
+           "model" : "Geforce RTX 3060 ti",
+           "vram" : 8,
+           "price" : 549.0,
+           "fans" : 2
+        },
+        {
+            "id" : 2,
+            "brand" : "MSI",
+            "model" : "AMD Radeon RX 6700 XT",
+            "vram" : 12,
+            "price" : 1199.0,
+            "fans" : 3
+         },
+         {
+            "id" : 3,
+            "brand" : "ASUS ROG Strix",
+            "model" : "Geforce RTX 3080 ti",
+            "vram" : 16,
+            "price" : 2199.0,
+            "fans" : 2
+         },
+         {
+            "id" : 4,
+            "brand" : "Gigabyte",
+            "model" : "Geforce RTX 2080",
+            "vram" : 12,
+            "price" : 1953.0,
+            "fans" : 3
+         },
+         {
+            "id" : 5,
+            "brand" : "ZOTAC",
+            "model" : "Geforce GTX 1650",
+            "vram" : 4,
+            "price" : 459.0,
+            "fans" : 1
+         }
+    ]
+}

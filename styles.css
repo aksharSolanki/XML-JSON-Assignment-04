@@ -1,0 +1,57 @@
+body {
+    background: white;
+}
+
+#id {
+    border: 2px solid blue;
+}
+
+header {
+    font-size: 2.2em;
+}
+#parent {
+    display: flex;
+    align-items: center;
+}
+#laptop {
+    flex: 0 0 auto;
+    padding: 10px;
+    width: 35%;
+    border: 1px solid grey;
+    margin: 5px;
+}
+#laptop h2 {
+    text-align: center;
+}
+#laptop button {
+    margin-left: 41%;
+}
+#laptop article {
+    margin-left: 9%;
+}
+#gpu h2 {
+    text-align: center;
+}
+#gpu button {
+    margin-left: 41%;
+}
+#gpu article {
+    margin-left: 9%;
+}
+#gpu {
+    flex: 0 0 auto;
+    padding: 10px;
+    border: 1px solid grey;
+    margin: 5px;
+    width: 35%;
+}
+#btnLaptop {
+    padding: 5px;
+    width: 20%;
+    margin-top: 3%;
+}
+#btnGPU {
+    padding: 5px;
+    width: 20%;
+    margin-top: 3%;
+}
