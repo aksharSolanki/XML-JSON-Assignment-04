@@ -43,34 +43,22 @@
                     All you have to do is press the Get GPU button to view them.<br>
                 </article>
                 <button id="btnGPU" onclick="DownloadJSON()">Get GPU</button>
-                <div id="gpuResult"></div>
+                <div id="gpuResult">
+                    <table id="tableLaptop">
+                        <tr>
+                            <th>ID</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>VRAM</th>
+                            <th>Price</th>
+                            <th>Fans</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
     <script type="text/javascript">
-        function DownloadXML() {
-            //CREATE A NEW XHTTP REQUEST
-            var xhttp = new XMLHttpRequest();
-
-            //SET REQUEST TYPE
-            xhttp.timeout = 3000;
-            xhttp.responseType = 'text/xml';
-
-            //ON STATE CHANGE HANDLER
-            xhttp.onreadystatechange = function () {
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    var xmlDoc = xhttp.responseXML;
-                    var output = "";
-                    var laptopList = xmlDoc.getElementsByName("laptops")[0].childNodes;
-                    for(i = 0; i < laptopList.length; i++) {
-                        output += "Brand: " + laptopList[i].childNodes[0].textContent + "<br>"; 
-                    }
-                    document.getElementById('laptopListResult').innerHTML = "TEST";
-                };
-                xhttp.open("GET", "laptops.xml");
-                xhttp.send();
-            }
-        }
         function DownloadJSON() {
             //CREATE A NEW XHTTP REQUEST
             var xhttp = new XMLHttpRequest();
@@ -85,12 +73,14 @@
                     var jsonFile = xhttp.response;
                     var output = "";
                     for(i = 0; i < jsonFile.graphicCards.length; i++) {
-                        output += "ID: " + jsonFile.graphicCards[i].id + "<br>";
-                        output += "Brand: " + jsonFile.graphicCards[i].brand + "<br>";
-                        output += "Model: " + jsonFile.graphicCards[i].model + "<br>";
-                        output += "VRAM: " + jsonFile.graphicCards[i].vram + "<br>";
-                        output += "Price: " + jsonFile.graphicCards[i].price + "<br>";
-                        output += "Fans: " + jsonFile.graphicCards[i].fans + "<br>";
+                        output += "<tr>";
+                        output += "<td>ID: " + jsonFile.graphicCards[i].id + "</td>";
+                        output += "<td>Brand: " + jsonFile.graphicCards[i].brand + "</td>";
+                        output += "<td>Model: " + jsonFile.graphicCards[i].model + "</td>";
+                        output += "<td>VRAM: " + jsonFile.graphicCards[i].vram + "</td>";
+                        output += "<td>Price: " + jsonFile.graphicCards[i].price + "</td>";
+                        output += "<td>Fans: " + jsonFile.graphicCards[i].fans + "</td>";
+                        output += "</tr>";
                     }
                     document.getElementById('gpuResult').innerHTML = output;
                 }
