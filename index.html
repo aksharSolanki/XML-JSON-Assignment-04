@@ -49,19 +49,17 @@
     </main>
     <script type="text/javascript">
         function DownloadXML() {
-            alert("TEST1");
             //CREATE A NEW XHTTP REQUEST
             var xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
             xhttp.responseType = 'text/xml';
 
-            alert("TEST2");
             //ON STATE CHANGE HANDLER
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
-                    alert(xmlDoc.getElementsByTagName("laptops")[0].nodeName);
+                    alert("TEST");
                 };
                 xhttp.open("GET", "laptops.xml");
                 xhttp.send();
