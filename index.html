@@ -23,13 +23,7 @@
                 <div id="laptopListResult">
                     <table id="tableLaptop" border="1px solid blue">
                         <tr>
-                            <th>ID</th>
-                            <th>Brand</th>
-                            <th>Model</th>
-                            <th>CPU</th>
-                            <th>RAM</th>
-                            <th>Storage</th>
-                            <th>Weight</th>
+                            <th>Laptop Info</th>
                         </tr>
                     </table>
                 </div>
@@ -74,9 +68,8 @@
                     var output = "";
 
                     for(i = 0; i < xmlDoc.getElementsByTagName("laptops")[0].childNodes.length; i++) {
-                        var spec = xmlDoc.getElementsByTagName("laptops")[0].childNodes[i]
                         output += "<tr>";
-                            output += "<td>" + spec.childNodes[1].textContent + "</td>";
+                            output += "<td>" + xmlDoc.getElementsByTagName("laptops")[0].childNodes[i].textContent + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById('tableLaptop').innerHTML += output;
