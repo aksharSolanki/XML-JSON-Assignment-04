@@ -65,7 +65,7 @@
                     var xmlDoc = xhttp.responseXML;
                     var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
                     var output = "";
-                    output += "Nodename : " + xmlDoc.getElementsByTagName("laptops")[0].nodeName;
+                    output += xmlDoc.getElementsByTagName("laptops")[0].getElementsByTagName("laptop")[0].textContent;
                     // for (var i = 0; i < laptopList.length; i++) {
                     //     output += "<tr>";
                     //         output += "<td>" + laptopList[i].childNodes[0].textContent + "</td>";
