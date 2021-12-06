@@ -74,7 +74,7 @@
                     var output = "";
                     for(i = 0; i < xmlDoc.getElementsByTagName("laptops")[0].childNodes.length; i++) {
                         output += "<tr>";
-                            output += "<td>" + xmlDoc.getElementsByTagName("laptops")[0].childNode[1].textContent + "</td>";
+                            output += "<td>" + xmlDoc.getElementsByTagName("laptops")[0].childNodes[i].childNodes[1].textContent + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById('laptopListResult').innerHTML += output;
