@@ -57,14 +57,13 @@
             var xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
-            xhttp.responseType = "text/xml";
+            xhttp.responseType = 'xml';
 
             //ON STATE CHANGE HANDLER
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
-                    var root = xmlDoc.getElementsByTagName("laptopLists")[0];
-                    var laptopList = xmlDoc.getElementsByTagName("laptop")[0].childNodes;
+                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
                     var output = "";
                     for (var i = 0; i < laptopList.length; i++) {
                         output += "<tr>";
