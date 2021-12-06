@@ -12,6 +12,7 @@ header {
 #parent {
     display: flex;
     align-items: center;
+    vertical-align: top;
 }
 #laptop {
     flex: 0 0 auto;
@@ -54,4 +55,8 @@ header {
     padding: 5px;
     width: 20%;
     margin-top: 3%;
+}
+
+#tableLaptop {
+    border: 1px solid red;
 }
