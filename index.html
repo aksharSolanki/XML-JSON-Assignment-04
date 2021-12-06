@@ -44,10 +44,10 @@
     </main>
     <script type="text/javascript">
         //FUNCTION TO DOWNLOAD XML DOC AND TRAVERSE IT
+        var xhttp;
         function DownloadXML() {
-            if(document.getElementById('tableResult').value == "") {
             //CREATE NEW XHTTP REQUEST
-            var xhttp = new XMLHttpRequest();
+            xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
             xhttp.responseType = "text/xml";
@@ -86,11 +86,10 @@
             xhttp.open("GET", "laptops.xml");
             xhttp.send();
         }
-    }
 
         function DownloadJSON() {
             //CREATE A NEW XHTTP REQUEST
-            var xhttp = new XMLHttpRequest();
+            xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
             xhttp.timeout = 3000;
