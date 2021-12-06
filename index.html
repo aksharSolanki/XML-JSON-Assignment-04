@@ -77,7 +77,7 @@
                             output += "<td>" + xmlDoc.getElementsByTagName("laptops")[0].childNodes[i].textContent + "</td>";
                         output += "</tr>";
                     }
-                    document.getElementById('laptopListResult').innerHTML += output;
+                    document.getElementById('tableLaptop').innerHTML += output;
                 }
             };
             xhttp.open("GET", "laptops.xml");
