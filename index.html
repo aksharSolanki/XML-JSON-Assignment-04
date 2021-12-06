@@ -44,7 +44,7 @@
                 </article>
                 <button id="btnGPU" onclick="DownloadJSON()">Get GPU</button>
                 <div id="gpuResult">
-                    <table id="tableLaptop">
+                    <table id="tableGPU">
                         <tr>
                             <th>ID</th>
                             <th>Brand</th>
@@ -72,8 +72,12 @@
                 if(xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
                     var output = "";
-                    var nodeName = xmlDoc.getElementsByTagName("laptops")[0].nodeName;
-                    output = nodeName;
+                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
+                    for(i = 0; i < laptopList.length; i++) {
+                        output += "<tr>";
+                            output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
+                        output += "</tr>";
+                    }
                     document.getElementById('laptopListResult').innerHTML += output;
                 }
             };
@@ -104,7 +108,7 @@
                         output += "<td>" + jsonFile.graphicCards[i].fans + "</td>";
                         output += "</tr>";
                     }
-                    document.getElementById('gpuResult').innerHTML += output;
+                    document.getElementById('tableGPU').innerHTML += output;
                 }
             };
             xhttp.open("GET", "gpu.json");
