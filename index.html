@@ -57,7 +57,7 @@
             var xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
-            xhttp.responseType = 'text/xml';
+            xhttp.responseType = 'text';
 
             //ON STATE CHANGE HANDLER
             xhttp.onreadystatechange = function () {
@@ -67,7 +67,6 @@
                     var output = "";
                     for (var i = 0; i < laptopList.length; i++) {
                         output += "<tr>";
-                            laptopList[i].getElementsByTagName("id")[0].
                             output += "<td>" + laptopList[i].childNodes[0].textContent + "</td>";
                             output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
                             output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
