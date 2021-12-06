@@ -45,6 +45,7 @@
     <script type="text/javascript">
         //FUNCTION TO DOWNLOAD XML DOC AND TRAVERSE IT
         function DownloadXML() {
+            if(document.getElementById('tableResult').value == "") {
             //CREATE NEW XHTTP REQUEST
             var xhttp = new XMLHttpRequest();
 
@@ -85,6 +86,7 @@
             xhttp.open("GET", "laptops.xml");
             xhttp.send();
         }
+    }
 
         function DownloadJSON() {
             //CREATE A NEW XHTTP REQUEST
