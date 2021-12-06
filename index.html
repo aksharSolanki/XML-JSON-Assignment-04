@@ -73,7 +73,8 @@
                     var xmlDoc = xhttp.responseXML;
                     var output = "";
                     var nodeName = xmlDoc.getElementsByTagName("laptops").nodeName;
-                    document.getElementById('laptopListResult').innerHTML = output;
+                    output = nodeName;
+                    document.getElementById('laptopListResult').innerHTML += output;
                 }
             };
             xhttp.open("GET", "laptops.xml");
@@ -103,7 +104,7 @@
                         output += "<td>Fans: " + jsonFile.graphicCards[i].fans + "</td>";
                         output += "</tr>";
                     }
-                    document.getElementById('gpuResult').innerHTML = output;
+                    document.getElementById('gpuResult').innerHTML += output;
                 }
             };
             xhttp.open("GET", "gpu.json");
