@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Assignment 04</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
@@ -48,17 +47,16 @@
             </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
     <script type="text/javascript">
         function DownloadXML() {
+            alert("TEST1");
             //CREATE A NEW XHTTP REQUEST
             var xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
             xhttp.responseType = 'text/xml';
 
+            alert("TEST2");
             //ON STATE CHANGE HANDLER
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -90,7 +88,7 @@
                         output += "Price: " + jsonFile.graphicCards.price + "<br>";
                         output += "Fans: " + jsonFile.graphicCards.fans + "<br>";
                     }
-                    document.getElementById("gpuResult").innerHTML = output;
+                    document.getElementById('gpuResult').innerHTML = output;
                 }
             };
             xhttp.open("GET", "gpu.json");
@@ -98,5 +96,4 @@
         }
     </script>
 </body>
-
 </html>
