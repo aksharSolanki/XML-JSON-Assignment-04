@@ -53,6 +53,7 @@
             var xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
+            xhttp.timeout = 3000;
             xhttp.responseType = 'text/xml';
 
             //ON STATE CHANGE HANDLER
@@ -64,7 +65,7 @@
                     for(i = 0; i < laptopList.length; i++) {
                         output += "Brand: " + laptopList[i].childNodes[0].textContent + "<br>"; 
                     }
-                    document.getElementById('laptopListResult').innerHTML = output;
+                    document.getElementById('laptopListResult').innerHTML = "TEST";
                 };
                 xhttp.open("GET", "laptops.xml");
                 xhttp.send();
