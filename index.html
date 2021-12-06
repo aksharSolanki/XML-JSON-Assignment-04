@@ -21,7 +21,7 @@
                 </article>
                 <button id="btnLaptop" onclick="DownloadXML()">Get Laptops</button>
                 <div id="laptopListResult">
-                    <table id="tableLaptop">
+                    <table id="tableLaptop" border="1px solid blue">
                         <tr>
                             <th>ID</th>
                             <th>Brand</th>
@@ -44,7 +44,7 @@
                 </article>
                 <button id="btnGPU" onclick="DownloadJSON()">Get GPU</button>
                 <div id="gpuResult">
-                    <table id="tableGPU">
+                    <table id="tableGPU" border="1px solid blue">
                         <tr>
                             <th>ID</th>
                             <th>Brand</th>
@@ -72,10 +72,9 @@
                 if(xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
                     var output = "";
-                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
-                    for(i = 0; i < laptopList.length; i++) {
+                    for(i = 0; i < xmlDoc.getElementsByTagName("laptops")[0].childNodes.length; i++) {
                         output += "<tr>";
-                            output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
+                            output += "<td>" + xmlDoc.getElementsByTagName("laptops")[0].childNode[1].textContent + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById('laptopListResult').innerHTML += output;
