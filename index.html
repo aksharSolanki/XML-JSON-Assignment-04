@@ -64,7 +64,7 @@
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
                     var output = "";
-                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0]
+                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0];
                     for(i = 0; i < laptopList.length; i++) {
                         output += "ID: " + laptopList.getElementsByTagName("id")[0].textContent + "<br>";
                     }
