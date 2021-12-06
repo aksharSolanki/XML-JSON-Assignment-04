@@ -54,12 +54,25 @@
             xhttp.onreadystatechange = function() {
                 if(xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
+                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
                     var output = "<tr>";
-                        output += "<th>Laptop Info</th>";
+                        output += "<th>ID</th>";
+                        output += "<th>Brand</th>";
+                        output += "<th>Model</th>";
+                        output += "<th>CPU</th>";
+                        output += "<th>RAM</th>";
+                        output += "<th>Storage</th>";
+                        output += "<th>Weight</th>";
                         output += "</tr>";
-                    for(i = 0; i < xmlDoc.getElementsByTagName("laptops")[0].childNodes.length; i++) {
+                    for(i = 0; i < laptopList.length; i++) {
                         output += "<tr>";
-                            output += "<td>" + xmlDoc.getElementsByTagName("laptops")[0].childNodes[i].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[0].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[3].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[4].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[5].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[6].textContent + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById('tableLaptop').innerHTML += output;
