@@ -64,13 +64,12 @@
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
                     var rootElement = xmlDoc.getElementsByTagName("laptops")[0];
-                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
                     var output = "";
                     // output += xmlDoc.getElementsByTagName("laptops")[0].getElementsByTagName("laptop")[0].textContent;
                     for (i = 0; i < laptopList.length; i++) {
                         var laptop = rootElement.childNodes[i];
                         output += "<tr>";
-                        output += "Contenet: " + laptop.textContent;
+                        output += "<td>" + "Content: " + laptop.textContent + "</td>";
                         //     //output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
                         //     // output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
                         //     // output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
