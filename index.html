@@ -59,7 +59,12 @@
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
-                    alert("TEST");
+                    var output = "";
+                    var laptopList = xmlDoc.getElementsByName("laptops")[0].childNodes;
+                    for(i = 0; i < laptopList.length; i++) {
+                        output += "Brand: " + laptopList[i].childNodes[0].textContent + "<br>"; 
+                    }
+                    document.getElementById('laptopListResult').innerHTML = output;
                 };
                 xhttp.open("GET", "laptops.xml");
                 xhttp.send();
@@ -79,12 +84,12 @@
                     var jsonFile = xhttp.response;
                     var output = "";
                     for(i = 0; i < jsonFile.graphicCards.length; i++) {
-                        output += "ID: " + jsonFile.graphicCards.id + "<br>";
-                        output += "Brand: " + jsonFile.graphicCards.brand + "<br>";
-                        output += "Model: " + jsonFile.graphicCards.model + "<br>";
-                        output += "VRAM: " + jsonFile.graphicCards.vram + "<br>";
-                        output += "Price: " + jsonFile.graphicCards.price + "<br>";
-                        output += "Fans: " + jsonFile.graphicCards.fans + "<br>";
+                        output += "ID: " + jsonFile.graphicCards[i].id + "<br>";
+                        output += "Brand: " + jsonFile.graphicCards[i].brand + "<br>";
+                        output += "Model: " + jsonFile.graphicCards[i].model + "<br>";
+                        output += "VRAM: " + jsonFile.graphicCards[i].vram + "<br>";
+                        output += "Price: " + jsonFile.graphicCards[i].price + "<br>";
+                        output += "Fans: " + jsonFile.graphicCards[i].fans + "<br>";
                     }
                     document.getElementById('gpuResult').innerHTML = output;
                 }
