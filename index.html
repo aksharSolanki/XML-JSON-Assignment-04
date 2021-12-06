@@ -12,16 +12,16 @@
     <h2>Using Github server</h2>
     <main>
         <div id="parent">
-            <div id="laptop">
+            <div id="laptopList">
                 <h2>Laptops</h2>
                 <article>
-                    This site gives you a variety of laptops to choose from.<br>
-                    It uses a XML list from the server to retrieve the laptop objects.<br>
-                    You can get a list of all the laptops available in the inventory.<br>
+                    This site gives you a variety of laptopLists to choose from.<br>
+                    It uses a XML list from the server to retrieve the laptopList objects.<br>
+                    You can get a list of all the laptopLists available in the inventory.<br>
                     All you have to do is press the Get Laptop button to view them.<br>
                 </article>
                 <button id="btnLaptop" onclick="DownloadXML()">Get Laptops</button>
-                <div id="laptopResult">
+                <div id="laptopListResult">
                     <table id="tableLaptop">
                         <tr>
                             <th>ID</th>
@@ -57,30 +57,30 @@
             var xhttp = new XMLHttpRequest();
 
             //SET REQUEST TYPE
-            xhttp.responseType = 'text/xml';
+            xhttp.responseType = "text/xml";
 
             //ON STATE CHANGE HANDLER
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
-                    var root = xmlDoc.getElementsByTagName("laptops")[0];
-                    var laptop = root.childNodes;
+                    var root = xmlDoc.getElementsByTagName("laptopLists")[0];
+                    var laptopList = xmlDoc.getElementsByTagName("laptop")[0].childNodes;
                     var output = "";
-                    for (var i = 0; i < laptop.length; i++) {
+                    for (var i = 0; i < laptopList.length; i++) {
                         output += "<tr>";
-                            output += "<td>" + laptop[i].getElementsByTagName("id").textContent + "</td>";
-                            output += "<td>" + laptop[i].getElementsByTagName("brand").textContent + "</td>";
-                            output += "<td>" + laptop[i].getElementsByTagName("model").textContent + "</td>";
-                            output += "<td>" + laptop[i].getElementsByTagName("cpu").textContent + "</td>";
-                            output += "<td>" + laptop[i].getElementsByTagName("ram").textContent + "</td>";
-                            output += "<td>" + laptop[i].getElementsByTagName("storage").textContent + "</td>";
-                            output += "<td>" + laptop[i].getElementsByTagName("weight").textContent + "</td>";
+                            output += "<td>" + laptopList[i].getElementsByTagName("id").textContent + "</td>";
+                            output += "<td>" + laptopList[i].getElementsByTagName("brand").textContent + "</td>";
+                            output += "<td>" + laptopList[i].getElementsByTagName("model").textContent + "</td>";
+                            output += "<td>" + laptopList[i].getElementsByTagName("cpu").textContent + "</td>";
+                            output += "<td>" + laptopList[i].getElementsByTagName("ram").textContent + "</td>";
+                            output += "<td>" + laptopList[i].getElementsByTagName("storage").textContent + "</td>";
+                            output += "<td>" + laptopList[i].getElementsByTagName("weight").textContent + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById("tableLaptop").innerHTML += output;
                 }
             };
-            xhttp.open("GET", "laptops.xml");
+            xhttp.open("GET", "laptopLists.xml");
             xhttp.send();
         }
     </script>
