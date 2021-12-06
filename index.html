@@ -68,13 +68,12 @@
                     // output += xmlDoc.getElementsByTagName("laptops")[0].getElementsByTagName("laptop")[0].textContent;
                     for (i = 0; i < laptopList.length; i++) {
                         output += "<tr>";
-                            output += "<td>" + laptopList[i].nodeName;
-                            // output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
-                            // output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
-                            // output += "<td>" + laptopList[i].childNodes[3].textContent + "</td>";
-                            // output += "<td>" + laptopList[i].childNodes[4].textContent + "</td>";
-                            // output += "<td>" + laptopList[i].childNodes[5].textContent + "</td>";
-                            // output += "<td>" + laptopList[i].childNodes[6].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[3].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[4].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[5].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[6].textContent + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById("tableLaptop").innerHTML += output;
