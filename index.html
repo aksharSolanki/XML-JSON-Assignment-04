@@ -63,14 +63,11 @@
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
-                    var rootElement = xmlDoc.getElementsByTagName("laptops")[0];
-                    var laptopList = rootElement.childNodes;
                     var output = "";
-                    output += "TEST01 - " + laptopList[0].textContent + "<br>";
-                    output += "TEST02 - " + laptopList[0].firstChild.textContent;
-                    // for(i = 0; i < laptopList.length; i++) {
-                    //     output += "Content: " + laptopList[i].firstChild.textContent;
-                    // }
+                    var laptopList = xmlDoc.getElementsByTagName("laptops")[0]
+                    for(i = 0; i < laptopList.length; i++) {
+                        output += "ID: " + laptopList.getElementsByTagName("id")[0].textContent + "<br>";
+                    }
                     document.getElementById("laptopListResult").innerHTML = output;
                 };
                 xhttp.open("GET", "laptops.xml");
