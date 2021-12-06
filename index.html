@@ -93,6 +93,8 @@
                     document.getElementById("gpuResult").innerHTML = output;
                 }
             };
+            xhttp.open("GET", "gpu.json");
+            xhttp.send();
         }
     </script>
 </body>
