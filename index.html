@@ -69,6 +69,31 @@
                 xhttp.send();
             }
         }
+        function DownloadJSON() {
+            //CREATE A NEW XHTTP REQUEST
+            var xhttp = new XMLHttpRequest();
+
+            //SET REQUEST TYPE
+            xhttp.timeout = 3000;
+            xhttp.responseType = "json";
+
+            //ON STATE CHANGE HANDLER
+            xhttp.onreadystatechange = function() {
+                if(xhttp.readyState == 4 && xhttp.status == 200) {
+                    var jsonFile = xhttp.response;
+                    var output = "";
+                    for(i = 0; i < jsonFile.graphicCards.length; i++) {
+                        output += "ID: " + jsonFile.graphicCards.id + "<br>";
+                        output += "Brand: " + jsonFile.graphicCards.brand + "<br>";
+                        output += "Model: " + jsonFile.graphicCards.model + "<br>";
+                        output += "VRAM: " + jsonFile.graphicCards.vram + "<br>";
+                        output += "Price: " + jsonFile.graphicCards.price + "<br>";
+                        output += "Fans: " + jsonFile.graphicCards.fans + "<br>";
+                    }
+                    document.getElementById("gpuResult").innerHTML = output;
+                }
+            };
+        }
     </script>
 </body>
 
