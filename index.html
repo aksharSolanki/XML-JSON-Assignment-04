@@ -65,21 +65,16 @@
                     var xmlDoc = xhttp.responseXML;
                     var rootElement = xmlDoc.getElementsByTagName("laptops")[0];
                     var output = "";
-                    // output += xmlDoc.getElementsByTagName("laptops")[0].getElementsByTagName("laptop")[0].textContent;
+                    var laptopList = rootElement.childNodes;
                     for (i = 0; i < laptopList.length; i++) {
-                        var laptop = rootElement.childNodes[i];
-                        output += "<tr>";
-                        output += "<td>" + "Content: " + laptop.textContent + "</td>";
-                        //     //output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
-                        //     // output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
-                        //     // output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
-                        //     // output += "<td>" + laptopList[i].childNodes[3].textContent + "</td>";
-                        //     // output += "<td>" + laptopList[i].childNodes[4].textContent + "</td>";
-                        //     // output += "<td>" + laptopList[i].childNodes[5].textContent + "</td>";
-                        //     // output += "<td>" + laptopList[i].childNodes[6].textContent + "</td>";
-                        output += "</tr>";
+                        var specs = laptopList[i].childNodes;
+                        for (j = 0; j < specs.length; j++) {
+                            //output += "<tr>";
+                                output += "Brands: " + specs[1].textContent + "<br>";
+                            //output += "</tr>";
+                        }
                     }
-                    document.getElementById("tableLaptop").innerHTML = output;
+                    document.getElementById("laptopListResult").innerHTML = output;
                 }
             };
             xhttp.open("GET", "laptops.xml");
