@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Assignment 04</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
@@ -51,28 +52,31 @@
             xhttp.responseType = "text/xml";
 
             //ON STATE CHANGE HANDLER
-            xhttp.onreadystatechange = function() {
-                if(xhttp.readyState == 4 && xhttp.status == 200) {
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
                     var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
                     var output = "<tr>";
-                        output += "<th>ID</th>";
-                        output += "<th>Brand</th>";
-                        output += "<th>Model</th>";
-                        output += "<th>CPU</th>";
-                        output += "<th>RAM</th>";
-                        output += "<th>Storage</th>";
-                        output += "<th>Weight</th>";
-                        output += "</tr>";
-                    for(i = 0; i < laptopList.length; i++) {
+                    output += "<th>ID</th>";
+                    output += "<th>Brand</th>";
+                    output += "<th>Model</th>";
+                    output += "<th>CPU</th>";
+                    output += "<th>RAM</th>";
+                    output += "<th>Storage</th>";
+                    output += "<th>Weight</th>";
+                    output += "</tr>";
+                    for (i = 0; i < laptopList.length; i++) {
+                        if (laptopList[i].nodeName == "#text") {
+                            continue;
+                        }
+                        var laptop = laptopList[i];
                         output += "<tr>";
-                            output += "<td>" + laptopList[i].textContent + "</td>";
-                            output += "<td>" + laptopList[i].textContent + "</td>";
-                            output += "<td>" + laptopList[i].textContent + "</td>";
-                            output += "<td>" + laptopList[i].textContent + "</td>";
-                            output += "<td>" + laptopList[i].textContent + "</td>";
-                            output += "<td>" + laptopList[i].textContent + "</td>";
-                            output += "<td>" + laptopList[i].textContent + "</td>";
+                        for (ii = 0; ii < laptop.childNodes.length; ii++) {
+                            if (laptop.childNodes[ii].nodeName == "#text") {
+                                continue;
+                            }
+                            output += "<td>" + laptop.childNodes[ii].textContent + "</td>";
+                        }
                         output += "</tr>";
                     }
                     document.getElementById('tableLaptop').innerHTML += output;
@@ -91,18 +95,18 @@
             xhttp.responseType = "json";
 
             //ON STATE CHANGE HANDLER
-            xhttp.onreadystatechange = function() {
-                if(xhttp.readyState == 4 && xhttp.status == 200) {
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var jsonFile = xhttp.response;
                     var output = "<tr>";
-                        output += "<th>ID</th>";
-                        output += "<th>Brand</th>";
-                        output += "<th>Model</th>";
-                        output += "<th>VRAM</th>";
-                        output += "<th>Price</th>";
-                        output += "<th>Fans</th>";
-                        output += "</tr>";
-                    for(i = 0; i < jsonFile.graphicCards.length; i++) {
+                    output += "<th>ID</th>";
+                    output += "<th>Brand</th>";
+                    output += "<th>Model</th>";
+                    output += "<th>VRAM</th>";
+                    output += "<th>Price</th>";
+                    output += "<th>Fans</th>";
+                    output += "</tr>";
+                    for (i = 0; i < jsonFile.graphicCards.length; i++) {
                         output += "<tr>";
                         output += "<td>" + jsonFile.graphicCards[i].id + "</td>";
                         output += "<td>" + jsonFile.graphicCards[i].brand + "</td>";
@@ -120,4 +124,5 @@
         }
     </script>
 </body>
+
 </html>
