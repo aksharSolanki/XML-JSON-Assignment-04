@@ -21,7 +21,19 @@
                     All you have to do is press the Get Laptop button to view them.<br>
                 </article>
                 <button id="btnLaptop" onclick="DownloadXML()">Get Laptops</button>
-                <div id="laptopResult"></div>
+                <div id="laptopResult">
+                    <table id="tableLaptop">
+                        <tr>
+                            <th>ID</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>CPU</th>
+                            <th>RAM</th>
+                            <th>Storage</th>
+                            <th>Weight</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div id="gpu">
                 <h2>GPU</h2>
@@ -52,7 +64,20 @@
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
                     var root = xmlDoc.getElementsByTagName("laptops")[0];
-                    document.getElementById('laptopResult').innerHTML = root.nodeName;
+                    var laptop = root.childNodes;
+                    var output = "";
+                    for (var i = 0; i < laptop.length; i++) {
+                        output += "<tr>";
+                            output += "<td>" + laptop[i].getElementsByTagName("id").textContent + "</td>";
+                            output += "<td>" + laptop[i].getElementsByTagName("brand").textContent + "</td>";
+                            output += "<td>" + laptop[i].getElementsByTagName("model").textContent + "</td>";
+                            output += "<td>" + laptop[i].getElementsByTagName("cpu").textContent + "</td>";
+                            output += "<td>" + laptop[i].getElementsByTagName("ram").textContent + "</td>";
+                            output += "<td>" + laptop[i].getElementsByTagName("storage").textContent + "</td>";
+                            output += "<td>" + laptop[i].getElementsByTagName("weight").textContent + "</td>";
+                        output += "</tr>";
+                    }
+                    document.getElementById("tableLaptop").innerHTML += output;
                 }
             };
             xhttp.open("GET", "laptops.xml");
