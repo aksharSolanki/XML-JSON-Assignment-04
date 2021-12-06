@@ -63,8 +63,7 @@
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
-                    var root = xmlDoc.getElementsByTagName("laptops")[0];
-                    document.getElementById('laptopListResult').innerHTML = root.textContent;
+                    alert(xmlDoc.getElementsByTagName("laptops")[0].nodeName);
                 };
                 xhttp.open("GET", "laptops.xml");
                 xhttp.send();
