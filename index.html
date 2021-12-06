@@ -21,10 +21,7 @@
                 </article>
                 <button id="btnLaptop" onclick="DownloadXML()">Get Laptops</button>
                 <div id="laptopResult">
-                    <table id="tableLaptop" border="1px solid blue">
-                        <tr>
-                            <th>Laptop Info</th>
-                        </tr>
+                    <table id="tableLaptop" border="1px solid black">
                     </table>
                 </div>
             </div>
@@ -38,15 +35,7 @@
                 </article>
                 <button id="btnGPU" onclick="DownloadJSON()">Get GPU</button>
                 <div id="gpuResult">
-                    <table id="tableGPU" border="1px solid blue">
-                        <tr>
-                            <th>ID</th>
-                            <th>Brand</th>
-                            <th>Model</th>
-                            <th>VRAM</th>
-                            <th>Price</th>
-                            <th>Fans</th>
-                        </tr>
+                    <table id="tableGPU" border="1px solid black">
                     </table>
                 </div>
             </div>
@@ -65,8 +54,9 @@
             xhttp.onreadystatechange = function() {
                 if(xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
-                    var output = "";
-
+                    var output = "<tr>";
+                        output += "<th>Laptop Info</th>";
+                        output += "</tr>";
                     for(i = 0; i < xmlDoc.getElementsByTagName("laptops")[0].childNodes.length; i++) {
                         output += "<tr>";
                             output += "<td>" + xmlDoc.getElementsByTagName("laptops")[0].childNodes[i].textContent + "</td>";
@@ -91,7 +81,14 @@
             xhttp.onreadystatechange = function() {
                 if(xhttp.readyState == 4 && xhttp.status == 200) {
                     var jsonFile = xhttp.response;
-                    var output = "";
+                    var output = "<tr>";
+                        output += "<th>ID</th>";
+                        output += "<th>Brand</th>";
+                        output += "<th>Model</th>";
+                        output += "<th>VRAM</th>";
+                        output += "<th>Price</th>";
+                        output += "<th>Fans</th>";
+                        output += "</tr>";
                     for(i = 0; i < jsonFile.graphicCards.length; i++) {
                         output += "<tr>";
                         output += "<td>" + jsonFile.graphicCards[i].id + "</td>";
