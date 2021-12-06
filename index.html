@@ -59,6 +59,27 @@
         </div>
     </main>
     <script type="text/javascript">
+        //FUNCTION TO DOWNLOAD XML DOC AND TRAVERSE IT
+        function DownloadXML() {
+            //CREATE NEW XHTTP REQUEST
+            var xhttp = new XMLHttpRequest();
+
+            //SET REQUEST TYPE
+            xhttp.responseType = "text/xml";
+
+            //ON STATE CHANGE HANDLER
+            xhttp.onreadystatechange = function() {
+                if(xhttp.readyState == 4 && xhttp.status == 200) {
+                    var xmlDoc = xhttp.responseXML;
+                    var output = "";
+                    var nodeName = xmlDoc.getElementsByTagName("laptops").nodeName;
+                    document.getElementById('laptopListResult').innerHTML = output;
+                }
+            };
+            xhttp.open("GET", "laptops.xml");
+            xhttp.send();
+        }
+
         function DownloadJSON() {
             //CREATE A NEW XHTTP REQUEST
             var xhttp = new XMLHttpRequest();
