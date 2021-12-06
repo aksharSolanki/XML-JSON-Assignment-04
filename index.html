@@ -72,7 +72,7 @@
                 if(xhttp.readyState == 4 && xhttp.status == 200) {
                     var xmlDoc = xhttp.responseXML;
                     var output = "";
-                    var nodeName = xmlDoc.getElementsByTagName("laptops").nodeName;
+                    var nodeName = xmlDoc.getElementsByTagName("laptops")[0].nodeName;
                     output = nodeName;
                     document.getElementById('laptopListResult').innerHTML += output;
                 }
@@ -96,12 +96,12 @@
                     var output = "";
                     for(i = 0; i < jsonFile.graphicCards.length; i++) {
                         output += "<tr>";
-                        output += "<td>ID: " + jsonFile.graphicCards[i].id + "</td>";
-                        output += "<td>Brand: " + jsonFile.graphicCards[i].brand + "</td>";
-                        output += "<td>Model: " + jsonFile.graphicCards[i].model + "</td>";
-                        output += "<td>VRAM: " + jsonFile.graphicCards[i].vram + "</td>";
-                        output += "<td>Price: " + jsonFile.graphicCards[i].price + "</td>";
-                        output += "<td>Fans: " + jsonFile.graphicCards[i].fans + "</td>";
+                        output += "<td>" + jsonFile.graphicCards[i].id + "</td>";
+                        output += "<td>" + jsonFile.graphicCards[i].brand + "</td>";
+                        output += "<td>" + jsonFile.graphicCards[i].model + "</td>";
+                        output += "<td>" + jsonFile.graphicCards[i].vram + "</td>";
+                        output += "<td>" + jsonFile.graphicCards[i].price + "</td>";
+                        output += "<td>" + jsonFile.graphicCards[i].fans + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById('gpuResult').innerHTML += output;
