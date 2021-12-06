@@ -2,48 +2,48 @@
 <!DOCTYPE laptops>
 <laptops>
     <laptop>
-        <id>1</id>
-        <brand>Dell</brand>
-        <model>XPS 15</model>
-        <cpu>Intel Core i7 11th Gen</cpu>
-        <ram>8GB</ram>
-        <storage type="SSD">256 GB</storage>
-        <weight>2.64 Pounds</weight>
+        <id>ID: 1</id>
+        <brand>Brand: Dell</brand>
+        <model>Model: XPS 15</model>
+        <cpu>CPU: Intel Core i7 11th Gen</cpu>
+        <ram>RAM: 8GB</ram>
+        <storage type="SSD">Storage: 256 GB</storage>
+        <weight>Weight: 2.64 Pounds</weight>
     </laptop>
     <laptop>
-        <id>2</id>
-        <brand>Microsoft</brand>
-        <model>Surface Laptop Studio</model>
-        <cpu>Intel Core i5 11th Gen</cpu>
-        <ram>16GB</ram>
-        <storage type="SSD">512 GB</storage>
-        <weight>3.8 Pounds</weight>
+        <id>ID: 2</id>
+        <brand>Brand: Microsoft</brand>
+        <model>Model: Surface Laptop Studio</model>
+        <cpu>CPU: Intel Core i5 11th Gen</cpu>
+        <ram>RAM: 16GB</ram>
+        <storage type="SSD">Storage: 512 GB</storage>
+        <weight>Weight: 3.8 Pounds</weight>
     </laptop>
     <laptop>
-        <id>3</id>
-        <brand>Asus</brand>
-        <model>ROG Zephyrus G14</model>
-        <cpu>AMD Ryzen 9</cpu>
-        <ram>16GB</ram>
-        <storage type="SSD">1 TB</storage>
-        <weight>2.79 Pounds</weight>
+        <id>ID: 3</id>
+        <brand>Brand: Asus</brand>
+        <model>Model: ROG Zephyrus G14</model>
+        <cpu>CPU: AMD Ryzen 9</cpu>
+        <ram>RAM: 16GB</ram>
+        <storage type="SSD">Storage: 1 TB</storage>
+        <weight>Weight: 2.79 Pounds</weight>
     </laptop>
     <laptop>
-        <id>4</id>
-        <brand>Alienware</brand>
-        <model>m15 R4</model>
-        <cpu>Intel Core i7 11th Gen</cpu>
-        <ram>32GB</ram>
-        <storage type="SSD">512 GB</storage>
-        <weight>3.5 Pounds</weight>
+        <id>ID: 4</id>
+        <brand>Brand: Alienware</brand>
+        <model>Model: m15 R4</model>
+        <cpu>CPU: Intel Core i7 11th Gen</cpu>
+        <ram>RAM: 32GB</ram>
+        <storage type="SSD">Storage: 512 GB</storage>
+        <weight>Weight: 3.5 Pounds</weight>
     </laptop>
     <laptop>
-        <id>5</id>
-        <brand>Lenevo</brand>
-        <model>Yoga 9i</model>
-        <cpu>Intel Core i3 11th Gen</cpu>
-        <ram>32GB</ram>
-        <storage type="SSD">256 GB</storage>
-        <weight>3 Pounds</weight>
+        <id>ID: 5</id>
+        <brand>Brand: Lenevo</brand>
+        <model>Model: Yoga 9i</model>
+        <cpu>CPU: Intel Core i3 11th Gen</cpu>
+        <ram>RAM: 32GB</ram>
+        <storage type="SSD">Storage: 256 GB</storage>
+        <weight>Weight: 3 Pounds</weight>
     </laptop>
 </laptops>
