@@ -70,6 +70,7 @@
                     // for(i = 0; i < laptopList.length; i++) {
                     //     output += "Content: " + laptopList[i].firstChild.textContent;
                     // }
+                    document.getElementById("laptopListResult").innerHTML = output;
                 };
                 xhttp.open("GET", "laptops.xml");
                 xhttp.send();
