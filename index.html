@@ -67,13 +67,14 @@
                     var output = "";
                     for (var i = 0; i < laptopList.length; i++) {
                         output += "<tr>";
-                            output += "<td>" + laptopList[i].getElementsByTagName("id")[0].textContent + "</td>";
-                            output += "<td>" + laptopList[i].getElementsByTagName("brand")[0].textContent + "</td>";
-                            output += "<td>" + laptopList[i].getElementsByTagName("model")[0].textContent + "</td>";
-                            output += "<td>" + laptopList[i].getElementsByTagName("cpu")[0].textContent + "</td>";
-                            output += "<td>" + laptopList[i].getElementsByTagName("ram")[0].textContent + "</td>";
-                            output += "<td>" + laptopList[i].getElementsByTagName("storage")[0].textContent + "</td>";
-                            output += "<td>" + laptopList[i].getElementsByTagName("weight")[0].textContent + "</td>";
+                            laptopList[i].getElementsByTagName("id")[0].
+                            output += "<td>" + laptopList[i].childNodes[0].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[3].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[4].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[5].textContent + "</td>";
+                            output += "<td>" + laptopList[i].childNodes[6].textContent + "</td>";
                         output += "</tr>";
                     }
                     document.getElementById("tableLaptop").innerHTML += output;
