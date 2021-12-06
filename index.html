@@ -69,13 +69,13 @@
                     for (i = 0; i < laptopList.length; i++) {
                         var specs = laptopList[i].childNodes;
                         for (j = 0; j < specs.length; j++) {
-                           output += "ID: " + specs[0] + "<br>";
-                           output += "Brand: " + specs[1] + "<br>";
-                           output += "Model: " + specs[2] + "<br>";
-                           output += "CPU: " + specs[3] + "<br>";
-                           output += "RAM: " + specs[4] + "<br>";
-                           output += "Storage: " + specs[5] + "<br>";
-                           output += "Weight: " + specs[6] + "<br>";
+                           output += "ID: " + specs[0].textContent + "<br>";
+                           output += "Brand: " + specs[1].textContent + "<br>";
+                           output += "Model: " + specs[2].textContent + "<br>";
+                           output += "CPU: " + specs[3].textContent + "<br>";
+                           output += "RAM: " + specs[4].textContent + "<br>";
+                           output += "Storage: " + specs[5].textContent + "<br>";
+                           output += "Weight: " + specs[6].textContent + "<br>";
                         }
                     }
                     document.getElementById("laptopListResult").innerHTML = output;
