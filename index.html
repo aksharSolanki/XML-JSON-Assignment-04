@@ -65,17 +65,18 @@
                     var xmlDoc = xhttp.responseXML;
                     var laptopList = xmlDoc.getElementsByTagName("laptops")[0].childNodes;
                     var output = "";
-                    for (var i = 0; i < laptopList.length; i++) {
-                        output += "<tr>";
-                            output += "<td>" + laptopList[i].childNodes[0].textContent + "</td>";
-                            output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
-                            output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
-                            output += "<td>" + laptopList[i].childNodes[3].textContent + "</td>";
-                            output += "<td>" + laptopList[i].childNodes[4].textContent + "</td>";
-                            output += "<td>" + laptopList[i].childNodes[5].textContent + "</td>";
-                            output += "<td>" + laptopList[i].childNodes[6].textContent + "</td>";
-                        output += "</tr>";
-                    }
+                    output += "Nodename : " + xmlDoc.getElementsByTagName("laptops")[0].nodeName;
+                    // for (var i = 0; i < laptopList.length; i++) {
+                    //     output += "<tr>";
+                    //         output += "<td>" + laptopList[i].childNodes[0].textContent + "</td>";
+                    //         output += "<td>" + laptopList[i].childNodes[1].textContent + "</td>";
+                    //         output += "<td>" + laptopList[i].childNodes[2].textContent + "</td>";
+                    //         output += "<td>" + laptopList[i].childNodes[3].textContent + "</td>";
+                    //         output += "<td>" + laptopList[i].childNodes[4].textContent + "</td>";
+                    //         output += "<td>" + laptopList[i].childNodes[5].textContent + "</td>";
+                    //         output += "<td>" + laptopList[i].childNodes[6].textContent + "</td>";
+                    //     output += "</tr>";
+                    // }
                     document.getElementById("tableLaptop").innerHTML += output;
                 }
             };
